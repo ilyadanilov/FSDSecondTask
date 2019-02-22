@@ -1,0 +1,145 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 826px auto;
+}
+
+//----- HEADER -----------------------------------------------------------
+.header {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  max-width: 84rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 18rem;
+  margin-bottom: 16rem;
+}
+
+.avatar {
+  content: "";
+  width: 40rem;
+  height: 40rem;
+  border-radius: 50rem;
+  background-color: $color-primary;
+  border: 20px solid $color-white;
+  box-shadow: 0 0 0 2px $color-primary;
+  margin-bottom: 7rem;
+}
+
+//----- MAIN -----------------------------------------------------------
+.main {
+  // max-width: 84rem;
+
+  display: grid;
+  grid-template-columns: 826px auto;
+}
+
+section[class^="section-"]:not(:first-child) {
+  margin-top: 10rem;
+}
+
+.section-profile {
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+
+  .heading-secondary::before {
+    background: url(../../img/PROFILE_ICON.jpg) no-repeat;
+  }
+
+  :last-child {
+    margin-top: 3rem;
+  }
+}
+
+.section-contact {
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+
+  .heading-secondary::before {
+    background: url(../../img/Phone_Icon.jpg) no-repeat;
+  }
+}
+
+.contact-info__item {
+
+  display: flex;
+  flex-direction: row;
+  margin-top: 8rem;
+  font-size: 4rem;
+
+  h4 {
+    /* Style for "ADDRESS" */
+    width: 174px;
+    color: $color-primary;
+    font-size: 41px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 8rem;
+  }
+
+}
+
+.section-skills {
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .heading-secondary::before {
+    background: url(../../img/SKILLS_ICON.jpg) no-repeat;
+  }
+
+  .heading-tertiary {
+    margin-top: 6rem;
+  }
+}
+
+.progress-circle {
+  display: flex;
+  justify-content: space-between;
+  width: 646px;
+  margin-top: 3rem;
+  list-style: none;
+
+  &__item {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: $color-primary;
+
+    &_blank {
+      background-color: #e6e6e6;
+    }
+  }
+}
+
+.section-education {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  align-items: baseline;
+  .heading-secondary::before {
+    background: url(../../img/EDUCATION_ICON.png) no-repeat;
+  }
+}
+
+// .progress-bar {
+// /* Style for "PHOTOSHOP" */
+// width: 554px;
+// height: 46px;
+// background-color: #e6e6e6;
+//   &__line {
+//   /* Style for "PHOTOSHOP" */
+//   width: 505px;
+//   height: 46px;
+//   background-color: #3d6cb0;
+//   }
+// }
+
+.footer {
+  height: 190px;
+}

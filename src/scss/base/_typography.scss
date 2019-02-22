@@ -1,0 +1,74 @@
+body {
+  font-family: "Myriad Pro";
+  font-weight: 400;
+  line-height: 1;
+  color: $color-font;
+
+  @include respond(tab-port) {
+    line-height: 1.5;
+  }
+
+}
+
+.heading-primary {
+  font-size: 10rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+
+  span:last-child {
+    font-size: 5rem;
+    margin-top: 4rem;
+  }
+
+}
+
+.heading-secondary {
+  width: 100%;
+  font-size: 8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  color: $color-primary;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    width: 18%;
+    height: 150px;
+    margin-right: 25px;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    background-color: $color-primary;
+    margin: -6px -100% 0 1.5rem;
+    
+    
+  }
+
+  // @include respond(phone) {
+  //     font-size: 3rem;
+  // }
+
+
+}
+
+.heading-tertiary {
+    /* Style for "CREATIVE" */
+font-size: 5rem;
+text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  // &:not(:last-child) {
+  //     margin-bottom: 4rem;
+  // }
+}
