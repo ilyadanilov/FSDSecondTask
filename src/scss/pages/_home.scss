@@ -1,19 +1,46 @@
-
 //----- MAIN -----------------------------------------------------------
 .main {
   max-width: 224rem;
   margin: 15rem auto 0;
   display: flex;
-
+  @include respond(desk) {
+    margin: 10rem auto;
+  }
+  @include respond(tab-land) {
+    flex-direction: column;
+  }
 }
+
 .flex-container {
   &:first-child {
-    width: 90rem;
+    width: 37%;
+    margin: 0 17rem 0 0;
+
     
-    margin-right: 15rem;
+
+    @include respond(big-desk) {
+      margin: 0 10rem 0 0;
+    }
+    @include respond(desk) {
+      width: 40%;
+      margin: 0 auto;
+    }
+    @include respond(tab-land) {
+      width: 90%;
+      margin: 0 auto
+    }
   }
-  max-width: 1246px;
-  
+
+  max-width: 57%;
+  @include respond(desk) {
+    width: 50%;
+    margin: 0 auto;
+  }
+  @include respond(tab-land) {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 //----- HEADER -----------------------------------------------------------
@@ -27,8 +54,8 @@
 
 .avatar {
   content: "";
-  width: 40rem;
-  height: 40rem;
+  width: 46.5rem;
+  height: 46.5rem;
   border-radius: 50rem;
   background-color: $color-primary;
   border: 20px solid $color-white;
@@ -36,27 +63,38 @@
   margin-bottom: 7rem;
 }
 
-
-section[class^="section-"]:not(:first-child) {
+[class^="section-"] {
   margin-top: 10rem;
+  @include respond(tab-land) {
+    margin-top: 5rem;
+  }
 }
 
+// section[class^="section-"]:not(:first-child) {
+//   margin-top: 10rem;
+// }
+
 .section-profile {
-  
   display: flex;
   flex-direction: column;
 
   .heading-secondary::before {
     background: url(../../img/PROFILE_ICON.jpg) no-repeat;
   }
-
+  @include respond(tab-land) {
+    .paragraph {
+      width: 80%;
+      margin: 3rem auto 0;
+    }
+  }
 }
 
 .section-contact {
-  
   display: flex;
   flex-direction: column;
-  margin-top: 5px;
+  @include respond(tab-land){
+    align-items: center;
+  }
 
   .heading-secondary::before {
     background: url(../../img/Phone_Icon.jpg) no-repeat;
@@ -64,15 +102,12 @@ section[class^="section-"]:not(:first-child) {
 }
 
 .contact-info__item {
-
   display: flex;
-  flex-direction: row;
-  margin-top: 8rem;
+  margin-top: 6rem;
   font-size: 4rem;
 }
 
 .section-skills {
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,16 +117,22 @@ section[class^="section-"]:not(:first-child) {
   }
 
   .heading-tertiary {
-    margin-top: 6rem;
+    &:first-of-type {
+      margin-top: 6rem;
+    }
+
+    margin-top: 3rem;
   }
 }
 
 .progress-circle {
   display: flex;
   justify-content: space-between;
-  width: 646px;
+  width: 64.6rem;
   margin-top: 3rem;
-  list-style: none;
+  @include respond(desk) {
+    width: 70rem;
+  }
 
   &__item {
     width: 36px;
@@ -106,41 +147,92 @@ section[class^="section-"]:not(:first-child) {
 }
 
 .section-education {
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  
   .heading-secondary::before {
     background: url(../../img/EDUCATION_ICON.png) no-repeat;
   }
-}
-.education-list {
-  list-style: none;
-  margin: 6.4rem 0 0 2.5rem;
-  
-  &__item {
-    display: flex;
-    flex-direction: column;
-    margin-top: 4rem;
-    .paragraph {
-      margin: 3rem 0 0 8rem;
-      }
+  @include respond(tab-land) {
+    margin-top: 5rem;
+  }
+  @include respond(big-desk) {
+    margin-top: 0;
   }
 }
 
-// .progress-bar {
-// /* Style for "PHOTOSHOP" */
-// width: 554px;
-// height: 46px;
-// background-color: #e6e6e6;
-//   &__line {
-//   /* Style for "PHOTOSHOP" */
-//   width: 505px;
-//   height: 46px;
-//   background-color: #3d6cb0;
-//   }
-// }
+// ROADMAP
+.roadmap-list {
+  margin: 6rem 0 0 2.5rem;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    @include respond(tab-land) {
+      align-items: center;
+    }
+
+    &:not(:first-child) {
+      margin-top: 4rem;
+    }
+
+    .paragraph {
+      margin: 2rem 0 0 8rem;
+    }
+  }
+}
+
+.section-experience {
+  .heading-secondary::before {
+    background: url(../../img/EXPERIENCE_ICON.jpg) no-repeat;
+  }
+}
+
+.section-software {
+  .heading-secondary::before {
+    background: url(../../img/SOFTWARE_ICON.jpg) no-repeat;
+  }
+}
+
+.software-knowledge {
+  margin: 6.4rem 0 0 1.7rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 68rem;
+  align-content: space-between;
+  @include respond(retina) {
+    height: 51rem;
+  }
+  &__item {
+    margin-top: 5rem;
+
+    &:nth-child(3n+1) {
+      margin-top: 0;
+    }
+  }
+}
+
+.progress-bar {
+  /* Style for "PHOTOSHOP" */
+  width: 55.4rem;
+  height: 46px;
+  background-color: #e6e6e6;
+  margin-top: 4rem;
+  @include respond(desk) {
+    width: 40rem;
+  }
+  @include respond(tab-land) {
+    width: 55.4rem;
+  }
+
+  @include respond (mobile) {
+    width: 40rem;
+  }
+
+  &__line {
+    /* Style for "PHOTOSHOP" */
+    height: inherit;
+    background-color: #3d6cb0;
+  }
+}
 
 .footer {
   height: 190px;

@@ -12,7 +12,9 @@
   },
   "author": "Ilya Danilov",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",

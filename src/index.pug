@@ -1,6 +1,57 @@
+//- DATA ARRAYS
+- 
+  const education= [
+  {
+  ocupation: "MASTER DEGREE",
+  date: "Feb 2011 - Jun 2014",
+  placeName: "UNIVERSITY NAME",
+  description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+  },
+  {
+  ocupation: "MASTER DEGREE",
+  date: "Feb 2011 - Jun 2014",
+  placeName: "UNIVERSITY NAME",
+  description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+  },
+  {
+  ocupation: "MASTER DEGREE",
+  date: "Feb 2011 - Jun 2014",
+  placeName: "UNIVERSITY NAME",
+  description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+  },
+  {
+  ocupation: "MASTER DEGREE",
+  date: "Feb 2011 - Jun 2014",
+  placeName: "UNIVERSITY NAME",
+  description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+  }
+  ];
+
+- 
+  const experience= [
+  {
+  ocupation: "COMPANY NAME",
+  date: "Feb 2011 - Jun 2014",
+  placeName: "YOUR JOB HERE",
+  description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+  },
+  {
+  ocupation: "COMPANY NAME",
+  date: "Feb 2011 - Jun 2014",
+  placeName: "YOUR JOB HERE",
+  description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+  },
+  {
+  ocupation: "COMPANY NAME",
+  date: "Feb 2011 - Jun 2014",
+  placeName: "YOUR JOB HERE",
+  description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque."
+  }
+  ];
+
 //- MIXINS
 mixin section(sectionName)
-  section()(class='section-'+sectionName)
+  section(class='section-'+sectionName)
     h2.heading-secondary= sectionName
     block
 
@@ -11,23 +62,30 @@ mixin contactInfo
         h5.heading-quinary= contactName
         p= contactInfo
     
-mixin progressBar(headingName, currentSkill)
+mixin progressCircleBar(headingName, currentSkill)
   h3.heading-tertiary= headingName
   ul.progress-circle
     - for (i=0; i<12;i++)
-      li()(class= i<currentSkill ? 'progress-circle__item' : 'progress-circle__item progress-circle__item_blank')
+      li(class= i<currentSkill ? 'progress-circle__item' : 'progress-circle__item progress-circle__item_blank')
 
-mixin educationList
-  ul.education-list
-    - for(i=0; i<4; i++)
-      li.education-list__item
+mixin roadmapList(arrayName)
+  ul.roadmap-list
+    - for(i=0; i<arrayName.length; i++)
+      li.roadmap-list__item
         h3.heading-tertiary
-          span.heading-tertiary_blue MASTER DEGREE
-          span.heading-tertiary__date Feb 2011 - Jun 2014
-          br
-          h4.heading-quaternary UNIVERSITY NAME
-        p.paragraph Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.
-      
+          span(class= arrayName === education ? 'heading-tertiary__blue heading-tertiary__bullet' : 'heading-tertiary__bullet') #{arrayName[i].ocupation}
+          span.heading-tertiary__date #{arrayName[i].date}
+        h4.heading-quaternary #{arrayName[i].placeName}
+        p.paragraph #{arrayName[i].description}
+
+mixin progressBar
+  ul.software-knowledge
+    each val, index in {'Photoshop': '91%', 'ILLUSTRATOR': '80%', 'INDESIGN': '56%', 'DREAMWEAVER': '83%', 'AFTER EFFECTS':'62%', 'HTML&CSS3': '91%'}
+      li.software-knowledge__item
+        h3.heading-tertiary= index
+        .progress-bar
+          .progress-bar__line(style={width: val})
+
 doctype html
 html(lang="en")
 
@@ -44,7 +102,7 @@ html(lang="en")
           div.avatar
           h1.heading-primary
             span NAME HERE
-            span.u-bold SURNAME
+            span.heading-primary__bold SURNAME
             span graphic designer
         +section('profile')
           p.paragraph Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu 
@@ -52,17 +110,23 @@ html(lang="en")
         +section('contact')
           +contactInfo
         +section('skills')
-          +progressBar('creative', 9)
-          +progressBar('teamwork', 11)
-          +progressBar('innovative', 6)
-          +progressBar('communication', 11)
+          +progressCircleBar('creative', 9)
+          +progressCircleBar('teamwork', 11)
+          +progressCircleBar('innovative', 6)
+          +progressCircleBar('communication', 11)
       .flex-container
-        section.section-education
-          h2.heading-secondary education
-          +educationList
+        +section('education')
+          +roadmapList(education)
+        +section('experience')
+          +roadmapList(experience)
+        +section('software')
+          +progressBar
+          
+
             
             
 
 
     footer.footer
+  
         
