@@ -1,55 +1,69 @@
 //----- MAIN -----------------------------------------------------------
 .main {
-  max-width: 224rem;
-  margin: 15rem auto 0;
+  // max-width: 224rem;
+  margin-top: 15rem;
+  padding: 0 12rem 0;
   display: flex;
-  @include respond(desk) {
-    margin: 10rem auto;
+  justify-content: space-around;
+
+  &__header {
+    margin-top: 2.4rem;
+    margin-bottom: 16rem;
   }
+
+  &__section {
+    margin-top: 10rem;
+
+    &:first-child {
+      margin-top: 0;
+
+      @include respond(tab-land) {
+        margin-top: 10rem;
+      }
+    }
+
+    @include respond(tab-land) {
+      margin-top: 5rem;
+    }
+  }
+
+
   @include respond(tab-land) {
     flex-direction: column;
+    align-items: center;
   }
 }
 
-.flex-container {
-  &:first-child {
+.main__container {
+  &_left {
     width: 37%;
-    margin: 0 17rem 0 0;
+  }
 
-    
+  &_right {
+    width: 57%;
 
-    @include respond(big-desk) {
-      margin: 0 10rem 0 0;
-    }
     @include respond(desk) {
-      width: 40%;
-      margin: 0 auto;
-    }
-    @include respond(tab-land) {
-      width: 90%;
-      margin: 0 auto
+      width: 50%;
     }
   }
 
-  max-width: 57%;
-  @include respond(desk) {
-    width: 50%;
-    margin: 0 auto;
-  }
   @include respond(tab-land) {
     width: 90%;
-    margin-right: auto;
-    margin-left: auto;
   }
 }
 
 //----- HEADER -----------------------------------------------------------
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2.4rem;
-  margin-bottom: 16rem;
+  &__avatar {
+    margin-bottom: 7rem;
+  }
+
+  &__heading-primary {
+  
+    &:last-child {
+      margin-top: 1rem;
+    }
+  }
 }
 
 .avatar {
@@ -60,27 +74,17 @@
   background-color: $color-primary;
   border: 20px solid $color-white;
   box-shadow: 0 0 0 2px $color-primary;
-  margin-bottom: 7rem;
-}
 
-[class^="section-"] {
-  margin-top: 10rem;
-  @include respond(tab-land) {
-    margin-top: 5rem;
-  }
 }
-
-// section[class^="section-"]:not(:first-child) {
-//   margin-top: 10rem;
-// }
 
 .section-profile {
   display: flex;
   flex-direction: column;
 
-  .heading-secondary::before {
-    background: url(../../img/PROFILE_ICON.jpg) no-repeat;
+  &__paragraph {
+    margin-top: 2rem;
   }
+
   @include respond(tab-land) {
     .paragraph {
       width: 80%;
@@ -92,36 +96,34 @@
 .section-contact {
   display: flex;
   flex-direction: column;
-  @include respond(tab-land){
+
+  @include respond(tab-land) {
     align-items: center;
   }
 
-  .heading-secondary::before {
-    background: url(../../img/Phone_Icon.jpg) no-repeat;
+
+}
+
+.contact-info {
+  &__heading-quinary {
+    margin-right: 8rem;
+  }
+
+  &__item {
+    display: flex;
+    margin-top: 6rem;
+    font-size: 4rem;
   }
 }
 
-.contact-info__item {
-  display: flex;
-  margin-top: 6rem;
-  font-size: 4rem;
-}
+.skills-list {
+  &__item {
+    margin-top: 3rem;
+    text-align: center;
 
-.section-skills {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .heading-secondary::before {
-    background: url(../../img/SKILLS_ICON.jpg) no-repeat;
-  }
-
-  .heading-tertiary {
     &:first-of-type {
       margin-top: 6rem;
     }
-
-    margin-top: 3rem;
   }
 }
 
@@ -130,6 +132,7 @@
   justify-content: space-between;
   width: 64.6rem;
   margin-top: 3rem;
+
   @include respond(desk) {
     width: 70rem;
   }
@@ -147,9 +150,6 @@
 }
 
 .section-education {
-  .heading-secondary::before {
-    background: url(../../img/EDUCATION_ICON.png) no-repeat;
-  }
   @include respond(tab-land) {
     margin-top: 5rem;
   }
@@ -165,6 +165,7 @@
   &__item {
     display: flex;
     flex-direction: column;
+
     @include respond(tab-land) {
       align-items: center;
     }
@@ -177,30 +178,24 @@
       margin: 2rem 0 0 8rem;
     }
   }
-}
 
-.section-experience {
-  .heading-secondary::before {
-    background: url(../../img/EXPERIENCE_ICON.jpg) no-repeat;
+  &__heading-quaternary {
+    margin-left: 8rem;
   }
 }
 
-.section-software {
-  .heading-secondary::before {
-    background: url(../../img/SOFTWARE_ICON.jpg) no-repeat;
-  }
-}
-
-.software-knowledge {
+.software-list {
   margin: 6.4rem 0 0 1.7rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   max-height: 68rem;
   align-content: space-between;
+
   @include respond(retina) {
     height: 51rem;
   }
+
   &__item {
     margin-top: 5rem;
 
@@ -216,9 +211,11 @@
   height: 46px;
   background-color: #e6e6e6;
   margin-top: 4rem;
+
   @include respond(desk) {
     width: 40rem;
   }
+
   @include respond(tab-land) {
     width: 55.4rem;
   }
