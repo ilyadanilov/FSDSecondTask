@@ -1,0 +1,49 @@
+.progress-bar-list {
+  margin: 6.4rem 0 0 1.7rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 68rem;
+  align-content: space-between;
+
+  @include respond(retina) {
+    height: 51rem;
+  }
+
+  &__item {
+    margin-top: 5rem;
+
+    &:nth-child(3n + 1) {
+      margin-top: 0;
+    }
+  }
+
+  &__progress-bar {
+    margin-top: 4rem;
+  }
+}
+
+.progress-bar {
+  /* Style for "PHOTOSHOP" */
+  width: 55.4rem;
+  height: 46px;
+  background-color: #e6e6e6;
+  
+  @include respond(desk) {
+    width: 40rem;
+  }
+
+  @include respond(tab-land) {
+    width: 55.4rem;
+  }
+
+  @include respond(mobile) {
+    width: 40rem;
+  }
+
+  &__line {
+    /* Style for "PHOTOSHOP" */
+    height: inherit;
+    background-color: #3d6cb0;
+  }
+}

@@ -50,44 +50,11 @@
   ];
 
 //- MIXINS
-mixin section(sectionName)
-  section(class='main__section section-'+sectionName)
-    h2.heading-secondary.heading-secondary_line.heading-secondary_icon(class='heading-secondary_icon_'+sectionName)= sectionName
-    block
-
-mixin contactInfo
-  ul.contact-info
-    each contactInfo, contactName in {'ADDRESS':'Main Street, City.','E-MAIL':'contact@domain.com', 'PHONE':'555-555-555', 'WEBSITE':'www.yourweb.com'}
-      li.contact-info__item
-        h5.heading-quinary.contact-info__heading-quinary= contactName
-        p= contactInfo
-    
-mixin skillsList
-  ul.skills-list.u-vertical-centered-content
-      each val, index in {'creative': 9,'teamwork': 11,'innovative': 6,'communication': 11}
-        li.skills-list__item
-          h3.heading-tertiary.section-skills__heading-tertiary= index
-          div.progress-circle
-            - for (i=0; i<12;i++)
-              div(class= i<val ? 'progress-circle__item' : 'progress-circle__item progress-circle__item_blank')
-
-mixin roadmapList(arrayName)
-  ul.roadmap-list
-    - for(i=0; i<arrayName.length; i++)
-      li.roadmap-list__item
-        h3.heading-tertiary
-          span(class= arrayName === education ? 'heading-tertiary_blue heading-tertiary_bullet' : 'heading-tertiary_bullet') #{arrayName[i].ocupation}
-          span.heading-tertiary__date #{arrayName[i].date}
-        h4.heading-quaternary.roadmap-list__heading-quaternary #{arrayName[i].placeName}
-        p.paragraph #{arrayName[i].description}
-
-mixin progressBar
-  ul.software-list
-    each val, index in {'Photoshop': '91%', 'ILLUSTRATOR': '80%', 'INDESIGN': '56%', 'DREAMWEAVER': '83%', 'AFTER EFFECTS':'62%', 'HTML&CSS3': '91%'}
-      li.software-list__item
-        h3.heading-tertiary= index
-        .progress-bar
-          .progress-bar__line(style={width: val})
+include ./includes/contactList/contactList.pug
+include ./includes/progressBarList.pug
+include ./includes/progressCircleList.pug
+include ./includes/roadmapList.pug
+include ./includes/section.pug
 
 doctype html
 html(lang="en")
@@ -111,22 +78,16 @@ html(lang="en")
           p.paragraph.section-profile__paragraph Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu 
             strong pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
         +section('contact')
-          +contactInfo
+          +contactList
         +section('skills')
-          +skillsList
+          +progressCircleList
       .main__container.main__container_right
         +section('education')
           +roadmapList(education)
         +section('experience')
           +roadmapList(experience)
         +section('software')
-          +progressBar
-          
-
-            
-            
-
-
+          +progressBarList
     footer.footer
   
         

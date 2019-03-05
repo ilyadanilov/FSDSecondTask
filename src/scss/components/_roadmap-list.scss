@@ -1,0 +1,23 @@
+.roadmap-list {
+  
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:first-child) {
+      margin-top: 4rem;
+    }
+    
+    @include respond(tab-land) {
+      align-items: center;
+    }
+  }
+
+  &__paragraph {
+    margin: 2rem 0 0 8rem;
+  }
+
+  &__heading-quaternary {
+    margin-left: 8rem;
+  }
+}

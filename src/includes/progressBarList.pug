@@ -1,0 +1,7 @@
+mixin progressBarList
+  ul.progress-bar-list
+    each val, index in {'Photoshop': '91%', 'ILLUSTRATOR': '80%', 'INDESIGN': '56%', 'DREAMWEAVER': '83%', 'AFTER EFFECTS':'62%', 'HTML&CSS3': '91%'}
+      li.progress-bar-list__item
+        h3.heading-tertiary= index
+        .progress-bar.progress-bar-list__progress-bar
+          .progress-bar__line(style={width: val})
