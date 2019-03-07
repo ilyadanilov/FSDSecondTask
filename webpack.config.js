@@ -23,7 +23,9 @@ module.exports = {
     
   },
   module: {
-    rules: [{
+    rules: [
+    
+      {
         test: /\.scss$/,
         include: path.resolve(__dirname, 'src/scss'),
         use: [
@@ -34,10 +36,11 @@ module.exports = {
               url: false
             }
           },
-          'sass-loader'
+          'sass-loader',
+          'webpack-import-glob-loader'
         ]
       },
-
+      
       {
         test: /\.pug$/,
         use: ['pug-loader']

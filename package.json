@@ -13,6 +13,7 @@
   "author": "Ilya Danilov",
   "license": "ISC",
   "dependencies": {
+    "webpack-import-glob-loader": "^1.6.3",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
