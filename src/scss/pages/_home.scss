@@ -1,13 +1,12 @@
 //----- MAIN -----------------------------------------------------------
 .main {
   // max-width: 224rem;
-  margin: 10rem 2rem 0;
-  display: grid;
+  margin: 6rem 2rem 0;
+  display: flex;
+  flex-direction: column;
   @include respond(desk) {
-    grid-template-columns: 3fr 4fr;
-    grid-template-rows: repeat(12, 1fr);
- 
-    
+    flex-direction: row;
+    justify-content: space-around;
   }
 
 
@@ -20,24 +19,31 @@
     &__section {
       margin-top: 4rem;
         // TODO media для двухколоночной разметки
-        // &:first-child {
-        //   margin-top: 0;
-
-        //   @include respond(tab-land) {
-        //     margin-top: 10rem;
-        //   }
-
-        // }
-
+        @include respond(desk) {
+        &:first-child {
+          margin-top: 0;
+        }
+        }
       
     }
 
-  
+  &__container {
+    &_left {
+      @include respond(desk) {
+      width: 37%;
+      }
+    }
+
+    &_right {
+      @include respond(desk) {
+        width: 57%;
+        }
+
+    }
+  }
 }
 //----- HEADER -----------------------------------------------------------
 .header {
-  grid-column: 1/2;
-  grid-row: 1/4;
   &__avatar {
     margin-bottom: 1rem;
   }
@@ -50,8 +56,6 @@
 }
 
 .section-profile {
-  grid-column: 1/2;
-  grid-row: 4/9;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,23 +71,10 @@
 }
 
 .section-contact {
-  grid-column: 1/2;
-  // grid-row: 1/4;
   display: flex;
   flex-direction: column;
 }
-.section-skills {
-  grid-column: 1/2;
-  // grid-row: 1/4;
-}
-.section-education {
-  grid-column: 2/3;
-  // grid-row: 1/4;
-}
-.section-experience {
-  grid-column: 2/3;
-  // grid-row: 1/4;
-}
+
 .section-education,
 .section-experience {
   &__roadmap-list {
@@ -91,10 +82,6 @@
   }
 }
 
-.section-software {
-  grid-column: 2/3;
-  // grid-row: 1/4;
-}
 
 .footer {
   height: 8rem;

@@ -67,25 +67,27 @@ html(lang="en")
 
   body
     main.main
-      header.header.main__header.u-vertical-centered-content
-        div.avatar.header__avatar
-        h1.heading-primary.header__heading-primary.u-vertical-centered-content
-          span NAME HERE
-          span.heading-primary_font_big SURNAME
-          span.heading-primary_font_small graphic designer
-      +section('profile')
-        p.paragraph.section-profile__paragraph Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu 
-          strong pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
-      +section('contact')
-        +contactList
-      +section('skills')
-        +progressCircleList
-      +section('education')
-        +roadmapList(education)
-      +section('experience')
-        +roadmapList(experience)
-      +section('software')
-        +progressBarList
+      .main__container.main__container_left
+        header.header.main__header.u-vertical-centered-content
+          div.avatar.header__avatar
+          h1.heading-primary.header__heading-primary.u-vertical-centered-content
+            span NAME HERE
+            span.heading-primary_font_big SURNAME
+            span.heading-primary_font_small graphic designer
+        +section('profile')
+          p.paragraph.section-profile__paragraph Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu 
+            strong pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
+        +section('contact')
+          +contactList
+        +section('skills')
+          +progressCircleList
+      .main__container.main__container_right
+        +section('education')
+          +roadmapList(education)
+        +section('experience')
+          +roadmapList(experience)
+        +section('software')
+          +progressBarList
     footer.footer
       p.paragraph.footer__build-by Build by Ilya Danilov
   
