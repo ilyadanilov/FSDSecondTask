@@ -8,20 +8,15 @@
 
 html {
   // This defines what 1rem is
-  font-size: 50%;
-  
-  
-  @include respond(desk) { // 1600px
-    font-size: 43.75%;       // 1rem = 7px 7/16 43.75%
-  }
-  @include respond(tab-port) { // 900px
-      font-size: 37.5%;       // 1rem = 6px 6/16 37.5%
-  }
-  
 
-  @include respond(retina) {
-      font-size: 62.5%;       // 1rem = 10px 10/16 62.5%
-  }
+  font-size: calc(8px + (16 - 8) * ((100vw - 360px) / (2560 - 360)));
+  // @include respond(desk) { // 1600px
+  //   font-size: 43.75%;       // 1rem = 7px 7/16 43.75%
+  // }
+  
+  // @include respond(retina) {
+  //     font-size: 62.5%;       // 1rem = 10px 10/16 62.5%
+  // }
   
 }
 

@@ -3,21 +3,24 @@
   &__item {
     display: flex;
     flex-direction: column;
-
+    align-items: center;
     &:not(:first-child) {
-      margin-top: 4rem;
+      margin-top: 2rem;
     }
     
-    @include respond(tab-land) {
-      align-items: center;
-    }
   }
-
+  &__heading-tertiary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   &__paragraph {
-    margin: 2rem 0 0 8rem;
-  }
+    // margin: 2rem 0 0 8rem;
+    width: 38rem;
+    }
 
   &__heading-quaternary {
-    margin-left: 8rem;
+    // margin-left: 8rem;
+    text-align: center;
   }
 }

@@ -1,25 +1,25 @@
 .progress-circle-list {
   &__item {
-    margin-top: 3rem;
+    margin-top: 2rem;
     text-align: center;
 
     &:first-of-type {
-      margin-top: 6rem;
+      margin-top: 4rem;
     }
   }
   &__progress-circle {
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
 }
 
 .progress-circle {
   display: flex;
   justify-content: space-between;
-  width: 64.6rem;
+  width: 40rem;
 
   &__item {
-    width: 36px;
-    height: 36px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     background-color: $color-primary;
 
@@ -27,8 +27,8 @@
       background-color: #e6e6e6;
     }
   }
-
-  @include respond(desk) {
-    width: 70rem;
-  }
+  // TODO размер
+  // @include respond(desk) {
+  //   width: 70rem;
+  // }
 }
