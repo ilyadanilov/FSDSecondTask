@@ -12,8 +12,10 @@
 
     &__header {
       // TODO media Для отступа от верха и от низа
-      // margin-top: 2.4rem;
-      // margin-bottom: 4rem;
+      @include respond(desk) {
+      margin-top: 2.4rem;
+      margin-bottom: 8rem;
+      }
     }
 
     &__section {

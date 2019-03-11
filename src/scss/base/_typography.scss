@@ -10,16 +10,23 @@ body {
   font-size: 7rem;
   text-transform: uppercase;
   font-weight: inherit;
+  @include respond(desk) {
+    font-size: 5rem;
+  }
   
   &_font_big {
     font-weight: 700;
     font-size: 8rem;
-    
+    @include respond(desk) {
+      font-size: 6rem;
+    }
   }
   &_font_small {
     font-size: 3rem;
     font-weight: 700;
-    
+    @include respond(desk) {
+      font-size: 2rem;
+    }
     }
   
 }
@@ -38,27 +45,43 @@ body {
   overflow: hidden;
   @include respond(desk) {
     flex-direction: row;
-    justify-content: center;
-  }
+    }
   &_profile::before {
-    background: url(../../img/icon_s/icon_profile_s.jpg) no-repeat;
+    background: url(../../img/icon_s/icon_profile_s.jpg) center/contain no-repeat;
+    
+    @include respond(desk) {
+      background: url(../../img/icon/icon_profile.jpg) center/contain no-repeat;
+    }
   }
   &_contact::before {
-    background: url(../../img/icon_s/icon_contact_s.jpg) no-repeat;
+    background: url(../../img/icon_s/icon_contact_s.jpg) center/contain no-repeat;
+    @include respond(desk) {
+      background: url(../../img/icon/icon_contact.jpg) center/contain no-repeat;
+    }
   }
   &_skills::before {
-    background: url(../../img/icon_s/icon_skills_s.jpg) no-repeat;
+    background: url(../../img/icon_s/icon_skills_s.jpg) center/contain no-repeat;
+    @include respond(desk) {
+      background: url(../../img/icon/icon_skills.jpg) center/contain no-repeat;
+    }
   }
   &_education::before {
-    background: url(../../img/icon_s/icon_education_s.jpg) no-repeat;
+    background: url(../../img/icon_s/icon_education_s.jpg) center/contain no-repeat;
+    @include respond(desk) {
+      background: url(../../img/icon/icon_education.jpg) center/contain no-repeat;
+    }
   }
-
   &_experience::before {
-    background: url(../../img/icon_s/icon_experiene_s.jpg) no-repeat;
+    background: url(../../img/icon_s/icon_experiene_s.jpg) center/contain no-repeat;
+    @include respond(desk) {
+      background: url(../../img/icon/icon_experience.jpg) center/contain no-repeat;
+    }
   }
-
   &_software::before {
-    background: url(../../img/icon_s/icon_software_s.jpg) no-repeat;
+    background: url(../../img/icon_s/icon_software_s.jpg) center/contain no-repeat;
+    @include respond(desk) {
+      background: url(../../img/icon/icon_software.jpg) center/contain no-repeat;
+    }
   }
   
   &::before {
@@ -69,8 +92,7 @@ body {
     @include respond(desk) {
       margin-bottom: 0;
       margin-right: 1rem;
-      width: 10rem;
-    }
+      }
     }
   }
   &_line::after {
@@ -80,10 +102,14 @@ body {
     margin: 0.5rem 0 0;
     background-color: $color-primary;
     @include respond(desk) {
-      margin: -1rem 0 0;
+      display: inline-block;
+      width: 100%;
+      margin: -6px -100% 0 1.5rem;
     }
     }
   }
+
+
   
 
 
@@ -137,6 +163,7 @@ body {
   font-size: 3rem;
   font-weight: 700;
   text-transform: uppercase;
+  
 }
 
 .paragraph {
