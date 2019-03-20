@@ -68,50 +68,50 @@ body {
     }
 
     &_profile::before {
-      background: url(../../img/icon_s/icon_profile_s.jpg) center/contain no-repeat;
+      background: url(../img/icon_s/icon_profile_s.jpg) center/contain no-repeat;
 
       @include respond(desk) {
-        background: url(../../img/icon/icon_profile.jpg) center/contain no-repeat;
+        background: url(../img/icon/icon_profile.jpg) center/contain no-repeat;
       }
     }
 
     &_contact::before {
-      background: url(../../img/icon_s/icon_contact_s.jpg) center/contain no-repeat;
+      background: url(../img/icon_s/icon_contact_s.jpg) center/contain no-repeat;
 
       @include respond(desk) {
-        background: url(../../img/icon/icon_contact.jpg) center/contain no-repeat;
+        background: url(../img/icon/icon_contact.jpg) center/contain no-repeat;
       }
     }
 
     &_skills::before {
-      background: url(../../img/icon_s/icon_skills_s.jpg) center/contain no-repeat;
+      background: url(../img/icon_s/icon_skills_s.jpg) center/contain no-repeat;
 
       @include respond(desk) {
-        background: url(../../img/icon/icon_skills.jpg) center/contain no-repeat;
+        background: url(../img/icon/icon_skills.jpg) center/contain no-repeat;
       }
     }
 
     &_education::before {
-      background: url(../../img/icon_s/icon_education_s.jpg) center/contain no-repeat;
+      background: url(../img/icon_s/icon_education_s.jpg) center/contain no-repeat;
 
       @include respond(desk) {
-        background: url(../../img/icon/icon_education.jpg) center/contain no-repeat;
+        background: url(../img/icon/icon_education.jpg) center/contain no-repeat;
       }
     }
 
     &_experience::before {
-      background: url(../../img/icon_s/icon_experiene_s.jpg) center/contain no-repeat;
+      background: url(../img/icon_s/icon_experiene_s.jpg) center/contain no-repeat;
 
       @include respond(desk) {
-        background: url(../../img/icon/icon_experience.jpg) center/contain no-repeat;
+        background: url(../img/icon/icon_experience.jpg) center/contain no-repeat;
       }
     }
 
     &_software::before {
-      background: url(../../img/icon_s/icon_software_s.jpg) center/contain no-repeat;
+      background: url(../img/icon_s/icon_software_s.jpg) center/contain no-repeat;
 
       @include respond(desk) {
-        background: url(../../img/icon/icon_software.jpg) center/contain no-repeat;
+        background: url(../img/icon/icon_software.jpg) center/contain no-repeat;
       }
     }
 

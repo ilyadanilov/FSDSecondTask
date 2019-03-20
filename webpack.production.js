@@ -38,12 +38,12 @@ module.exports = {
     //   use: [
     //     {
     //       loader: 'file-loader',
-    //       options: {name: 'img/[name].[ext]'}  
-    //     }]},  
+    //       options: {name: 'img/[name].[ext]'}
+    //     }]},
     {
         test: /\.scss$/,
         include: path.resolve(__dirname, 'src/scss'),
-        use:  [ 
+        use:  [
         MiniCssExtractPlugin.loader,
          {
           loader: 'css-loader',
@@ -55,19 +55,25 @@ module.exports = {
         //  {
         //   loader: 'resolve-url-loader'
         //  },
-        'postcss-loader', 
+        'postcss-loader',
         {
           loader: 'sass-loader',
           options: {
             sourceMap: true,
             sourceMapContents: false
           }
-        }],
-       
+        },
+        'webpack-import-glob-loader'
+        ],
+
+      },
+      {
+        test: /\.pug$/,
+        use: ['pug-loader']
       }
     ]
   },
-  plugins: [ 
+  plugins: [
     new CleanWebpackPlugin('dist', {} ),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -79,13 +85,12 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/style.[contenthash].css',
-     
+
     }),
-    
+
     new HtmlWebpackPlugin({
-      inject: false,
       hash: true,
-      template: './src/index.html',
+      template: './src/index.pug',
       filename: 'index.html'
 
     }),
@@ -96,10 +101,10 @@ module.exports = {
         to: './img'
       },
       {
-        from: './src/css',
-        to: './css'
+        from: './src/fonts',
+        to: './fonts'
       }
-      
+
     ]),
   ]
 };

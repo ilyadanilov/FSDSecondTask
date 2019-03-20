@@ -6,6 +6,24 @@
     box-sizing: inherit;
 }
 
+@font-face{
+
+  font-family: "Myriad Pro";
+
+  src: url('../fonts/MyriadProRegular.ttf') format('truetype'),
+
+  url('../fonts/MyriadProRegular.woff') format('woff'),
+
+  url('../fonts/MyriadProBold.ttf') format('truetype'),
+
+  url('../fonts/MyriadProBold.woff') format('woff');
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  }
+
 html {
   // This defines what 1rem is
 
@@ -13,11 +31,11 @@ html {
   // @include respond(desk) { // 1600px
   //   font-size: 43.75%;       // 1rem = 7px 7/16 43.75%
   // }
-  
+
   // @include respond(retina) {
   //     font-size: 62.5%;       // 1rem = 10px 10/16 62.5%
   // }
-  
+
 }
 
 body {
