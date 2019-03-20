@@ -1,21 +1,32 @@
 .progress-circle-list {
+  max-width: 60rem;
+  margin: 0 auto;
   &__item {
     margin-top: 2rem;
     text-align: center;
+    width: 78%;
 
     &:first-of-type {
       margin-top: 4rem;
+      @include respond(retina) {
+        margin-top: 3rem;
+      }
+    }
+    @include respond(big-desk) {
+      margin-top: 3rem;
     }
   }
   &__progress-circle {
     margin-top: 1rem;
+    @include respond(big-desk) {
+      margin-top: 1.5rem;
+    }
   }
 }
 
 .progress-circle {
   display: flex;
   justify-content: space-between;
-  width: 40rem;
 
   &__item {
     width: 2rem;

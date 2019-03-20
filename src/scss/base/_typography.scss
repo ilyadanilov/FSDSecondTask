@@ -10,25 +10,44 @@ body {
   font-size: 7rem;
   text-transform: uppercase;
   font-weight: inherit;
+
   @include respond(desk) {
     font-size: 5rem;
   }
-  
+
+  @include respond(big-desk) {
+    font-size: 7rem;
+  }
+
   &_font_big {
     font-weight: 700;
     font-size: 8rem;
+
     @include respond(desk) {
       font-size: 6rem;
     }
+
+    @include respond(big-desk) {
+      font-size: 8rem;
+    }
   }
+
   &_font_small {
+    margin-top: 1rem;
     font-size: 3rem;
     font-weight: 700;
+
     @include respond(desk) {
       font-size: 2rem;
     }
+
+    @include respond(big-desk) {
+      font-size: 3rem;
+      margin-top: 0;
     }
-  
+
+  }
+
 }
 
 .heading-secondary {
@@ -37,122 +56,152 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   color: $color-primary;
-  
+
   &_icon {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  overflow: hidden;
-  @include respond(desk) {
-    flex-direction: row;
-    }
-  &_profile::before {
-    background: url(../../img/icon_s/icon_profile_s.jpg) center/contain no-repeat;
-    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
     @include respond(desk) {
-      background: url(../../img/icon/icon_profile.jpg) center/contain no-repeat;
+      flex-direction: row;
     }
-  }
-  &_contact::before {
-    background: url(../../img/icon_s/icon_contact_s.jpg) center/contain no-repeat;
-    @include respond(desk) {
-      background: url(../../img/icon/icon_contact.jpg) center/contain no-repeat;
+
+    &_profile::before {
+      background: url(../../img/icon_s/icon_profile_s.jpg) center/contain no-repeat;
+
+      @include respond(desk) {
+        background: url(../../img/icon/icon_profile.jpg) center/contain no-repeat;
+      }
     }
-  }
-  &_skills::before {
-    background: url(../../img/icon_s/icon_skills_s.jpg) center/contain no-repeat;
-    @include respond(desk) {
-      background: url(../../img/icon/icon_skills.jpg) center/contain no-repeat;
+
+    &_contact::before {
+      background: url(../../img/icon_s/icon_contact_s.jpg) center/contain no-repeat;
+
+      @include respond(desk) {
+        background: url(../../img/icon/icon_contact.jpg) center/contain no-repeat;
+      }
     }
-  }
-  &_education::before {
-    background: url(../../img/icon_s/icon_education_s.jpg) center/contain no-repeat;
-    @include respond(desk) {
-      background: url(../../img/icon/icon_education.jpg) center/contain no-repeat;
+
+    &_skills::before {
+      background: url(../../img/icon_s/icon_skills_s.jpg) center/contain no-repeat;
+
+      @include respond(desk) {
+        background: url(../../img/icon/icon_skills.jpg) center/contain no-repeat;
+      }
     }
-  }
-  &_experience::before {
-    background: url(../../img/icon_s/icon_experiene_s.jpg) center/contain no-repeat;
-    @include respond(desk) {
-      background: url(../../img/icon/icon_experience.jpg) center/contain no-repeat;
+
+    &_education::before {
+      background: url(../../img/icon_s/icon_education_s.jpg) center/contain no-repeat;
+
+      @include respond(desk) {
+        background: url(../../img/icon/icon_education.jpg) center/contain no-repeat;
+      }
     }
-  }
-  &_software::before {
-    background: url(../../img/icon_s/icon_software_s.jpg) center/contain no-repeat;
-    @include respond(desk) {
-      background: url(../../img/icon/icon_software.jpg) center/contain no-repeat;
+
+    &_experience::before {
+      background: url(../../img/icon_s/icon_experiene_s.jpg) center/contain no-repeat;
+
+      @include respond(desk) {
+        background: url(../../img/icon/icon_experience.jpg) center/contain no-repeat;
+      }
     }
-  }
-  
-  &::before {
-    content: "";
-    width: 8rem;
-    height: 8rem;
-    margin-bottom: 1rem;
-    @include respond(desk) {
-      margin-bottom: 0;
-      margin-right: 1rem;
+
+    &_software::before {
+      background: url(../../img/icon_s/icon_software_s.jpg) center/contain no-repeat;
+
+      @include respond(desk) {
+        background: url(../../img/icon/icon_software.jpg) center/contain no-repeat;
+      }
+    }
+
+    &::before {
+      content: "";
+      width: 8rem;
+      height: 8rem;
+      margin-bottom: 1rem;
+
+      @include respond(desk) {
+        margin-bottom: 0;
+        margin-right: 2rem;
+        width: 9rem;
+        height: 9rem;
       }
     }
   }
+
   &_line::after {
     content: '';
     width: 30rem;
     height: 0.5rem;
     margin: 0.5rem 0 0;
     background-color: $color-primary;
+
     @include respond(desk) {
       display: inline-block;
       width: 100%;
       margin: -6px -100% 0 1.5rem;
     }
-    }
   }
+}
 
 
-  
+
 
 
 .heading-tertiary {
   font-size: 4rem;
   text-transform: uppercase;
   font-weight: inherit;
-  @include respond(desk) {
-  font-size: 3rem;
-  }
+
   &_blue {
     color: $color-primary;
   }
 
   &_bullet {
     font-weight: 700;
-    
+
     @include respond(desk) {
-    display: flex;
-    &::before {
-    content: '';
-    width: 2.4rem;
-    height: 2.4rem;
-    background-color: $color-font;
-    border-radius: 50%;
-    margin-right: 2rem;
-    }
+      display: flex;
+
+      &::before {
+        content: '';
+        width: 2.4rem;
+        height: 2.4rem;
+        background-color: $color-font;
+        border-radius: 50%;
+        margin-right: 2rem;
+        margin-left: 2rem;
+      }
     }
   }
+
   &__date {
+
     // TODO добавить media для отображения // перед датами
     @include respond(desk) {
-    margin-left: 1rem;
-    &::before {
+      margin-left: 1rem;
+
+      &::before {
         content: '// ';
       }
     }
+  }
+
+  @include respond(desk) {
+    font-size: 3rem;
+  }
+
+  @include respond(big-desk) {
+    font-size: 3.5rem;
   }
 }
 
 .heading-quaternary {
   font-size: 4rem;
   text-transform: uppercase;
+  font-weight: inherit;
+
   @include respond(desk) {
     font-size: 3rem;
   }
@@ -163,12 +212,16 @@ body {
   font-size: 3rem;
   font-weight: 700;
   text-transform: uppercase;
-  
+
+  @include respond(big-desk) {
+    font-size: 2.5rem;
+  }
 }
 
 .paragraph {
   font-size: $default-font-size;
   line-height: 3rem;
+
   @include respond(desk) {
     line-height: 2rem;
   }

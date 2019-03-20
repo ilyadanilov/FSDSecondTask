@@ -2,7 +2,7 @@ mixin progressCircleList
   ul.progress-circle-list.u-vertical-centered-content
       each val, index in {'creative': 9,'teamwork': 11,'innovative': 6,'communication': 11}
         li.progress-circle-list__item
-          h3.heading-tertiary.section-progress-circle__heading-tertiary= index
+          h3.heading-tertiary= index
           div.progress-circle.progress-circle-list__progress-circle
             - for (i=0; i<12;i++)
               div(class= i<val ? 'progress-circle__item' : 'progress-circle__item progress-circle__item_blank')

@@ -1,11 +1,14 @@
 .roadmap-list {
-  
+
   &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
     &:not(:first-child) {
       margin-top: 2rem;
+      @include respond(retina) {
+        margin-top: 2.6rem;
+      }
     }
     @include respond(desk) {
       align-items: initial;
@@ -17,15 +20,19 @@
     align-items: center;
     @include respond(desk) {
     flex-direction: row;
-    
-    
+
+
     }
   }
   &__paragraph {
-    width: 38rem;
+    max-width: 60rem;
+    text-align: center;
+    flex: 1 1 auto;
+
     @include respond(desk) {
-      margin: 1rem 0 0 4.5rem;
-      width: inherit;
+      margin: 1rem 0 0 6.5rem;
+      max-width: 100rem;
+      text-align: initial;
     }
     }
 
@@ -33,7 +40,7 @@
     text-align: center;
     @include respond(desk) {
       text-align: initial;
-      margin: 1rem 0 0 4.5rem;
+      margin: 1rem 0 0 6.5rem;
     }
   }
 }

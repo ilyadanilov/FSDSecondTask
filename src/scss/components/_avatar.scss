@@ -10,4 +10,9 @@
     width: 25rem;
     height: 25rem;
   }
+  @include respond(big-desk) {
+    border: 2rem solid $color-white;
+    width: 29rem;
+    height: 29rem;
+  }
 }

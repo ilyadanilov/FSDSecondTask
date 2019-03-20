@@ -2,33 +2,58 @@
   margin-top: 4rem;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
 
   &__item {
     text-align: center;
+    width: 38rem;
+
     &:not(:first-child) {
       margin-top: 2rem;
+      @include respond(big-desk) {
+        margin-top: 3rem;
+      }
+
+      @include respond(retina) {
+        margin-top: 4rem;
+      }
     }
-    // TODO двухколоночный прогресс с отступами в нужных местах
-    // &:nth-child(3n + 1) {
-    //   margin-top: 0;
-    // }
+
+    @include respond(desk) {
+      width: 45%;
+      text-align: initial;
+      &:nth-child(3n + 1) {
+        margin-top: 0;
+      }
+    }
   }
 
   &__progress-bar {
     margin-top: 1rem;
   }
+  @include respond(desk) {
+    align-items: initial;
+    align-content: space-between;
+    height: 27rem;
+    @include respond(big-desk) {
+      height: 31rem;
+    }
+  }
 }
 
 .progress-bar {
   /* Style for "PHOTOSHOP" */
-  width: 38rem;
   height: 2rem;
   background-color: #e6e6e6;
-  
-    &__line {
-      /* Style for "PHOTOSHOP" */
-      height: inherit;
-      background-color: #3d6cb0;
-    }
+  @include respond(big-desk) {
+    height: 3rem;
+  }
+
+  &__line {
+    /* Style for "PHOTOSHOP" */
+    height: inherit;
+    background-color: #3d6cb0;
+  }
+
 }

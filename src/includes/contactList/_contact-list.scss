@@ -1,14 +1,35 @@
 .contact-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   &__heading-quinary {
     margin-right: 1rem;
+    @include respond(desk) {
+      margin-right: 3rem;
+      width: 13rem;
+    }
+    @include respond(big-desk) {
+      margin-right: 5rem;
+      width: 11rem;
+    }
   }
 
   &__item {
     display: flex;
     margin-top: 2rem;
     font-size: 3rem;
+
     @include respond(desk) {
       font-size: 2.5rem;
     }
+    @include respond(big-desk) {
+      &:not(:first-child) {
+        margin-top: 4.5rem;
+      }
+    }
+  }
+  @include respond(desk) {
+    align-items: flex-start;
   }
 }

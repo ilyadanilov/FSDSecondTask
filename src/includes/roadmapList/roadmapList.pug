@@ -3,7 +3,7 @@ mixin roadmapList(arrayName)
     - for(i=0; i<arrayName.length; i++)
       li.roadmap-list__item
         h3.heading-tertiary.roadmap-list__heading-tertiary
-          span(class= arrayName === education ? 'heading-tertiary_blue heading-tertiary_bullet' : 'heading-tertiary_bullet') #{arrayName[i].ocupation}
+          span(class= arrayName === education ? 'heading-tertiary_blue heading-tertiary_bullet' : 'heading-tertiary_bullet') #{arrayName[i].occupation}
           span.heading-tertiary__date #{arrayName[i].date}
         h4.heading-quaternary.roadmap-list__heading-quaternary #{arrayName[i].placeName}
         p.paragraph.roadmap-list__paragraph #{arrayName[i].description}
